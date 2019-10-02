@@ -33,8 +33,10 @@ namespace FFmpeg.AutoGen.Native
                     case PlatformID.MacOSX:
                         return $"lib{libraryName}.{version}.dylib";
                     case PlatformID.Unix:
-                        return $"lib{libraryName}.so.{version}";
-                    case PlatformID.Win32NT:
+					//	return $"lib{libraryName}.so.{version}";
+						return $"lib{libraryName}-{version}.so";
+
+					case PlatformID.Win32NT:
                     case PlatformID.Win32S:
                     case PlatformID.Win32Windows:
                         return $"{libraryName}-{version}.dll";
